@@ -1,0 +1,65 @@
+@use "utils" as *;
+
+.sidebar {
+  position: relasttive;
+  top: 0;
+  height: 80%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(12px);
+  left: pxToRem(-350px);
+  width: pxToRem(300px);
+  transition: left 0.3s ease;
+  justify-content: space-between;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: pxToRem(4px);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: pxToRem(12px);
+    padding: pxToRem(12px);
+    font-size: pxToRem(18px);
+    border-radius: 8px;
+    color: black;
+    justify-content: start;
+    cursor: pointer;
+
+    &.active {
+      background: $color-primary;
+      color: $color-white;
+
+      img {
+        filter: invert(1);
+      }
+    }
+  }
+
+  &__settings {
+    display: flex;
+    flex-direction: column;
+    padding: pxToRem(12px);
+    gap: pxToRem(24px);
+    font-family: inherit;
+    font-size: pxToRem(18px);
+  }
+
+  &__option {
+    display: flex;
+    gap: pxToRem(12px);
+    font-family: inherit;
+  }
+
+  &--open {
+    left: 0;
+  }
+}

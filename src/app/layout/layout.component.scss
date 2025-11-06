@@ -1,8 +1,27 @@
 @use "utils" as *;
 
 .layout {
-  @include container();
-}
+  display: flex;
+  flex-direction: column;
 
-.content {
+  &__body {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    gap: pxToRem(32px);
+    @include container();
+
+    .sidebar {
+      width: 100%;
+      max-width: 300px;
+      flex-shrink: 0;
+      background: $color-white;
+    }
+
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0 pxToRem(32px) pxToRem(32px);
+    }
+  }
 }
