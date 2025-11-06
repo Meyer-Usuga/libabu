@@ -9,6 +9,11 @@ export const routes: Routes = [
         path: '',
         loadComponent: () => import('@pages').then((m) => m.HomePageComponent),
       },
+      {
+        path: 'explorar',
+        loadComponent: () =>
+          import('@pages').then((m) => m.ExplorePageComponent),
+      },
     ],
   },
 ];
