@@ -1,0 +1,35 @@
+@use "utils" as *;
+
+.button {
+  border: none;
+  padding: pxToRem(12px);
+  font-size: pxToRem(16px);
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: pxToRem(8px);
+  cursor: pointer;
+
+  //types
+
+  &.primary {
+    background: $color-primary;
+    color: $color-white;
+  }
+
+  &.secondary {
+    background: $color-secondary;
+    color: $color-neutral;
+  }
+
+  //shapes
+
+  &.square {
+    border-radius: 8px;
+  }
+
+  &.round {
+    border-radius: 9999px;
+  }
+}

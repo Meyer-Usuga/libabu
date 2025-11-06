@@ -1,0 +1,20 @@
+@use "utils" as *;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include container();
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: pxToRem(32px);
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    gap: pxToRem(24px);
+  }
+}

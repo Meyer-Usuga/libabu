@@ -1,0 +1,8 @@
+<button
+  class="button"
+  [class]="type() + ' ' + shape()"
+  [disabled]="disabled()"
+  aria-label="Interactive button"
+>
+  <ng-content></ng-content>
+</button>

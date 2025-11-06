@@ -1,0 +1,8 @@
+@use "utils" as *;
+
+.layout {
+  @include container();
+}
+
+.content {
+}
