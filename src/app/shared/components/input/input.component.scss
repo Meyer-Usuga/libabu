@@ -1,0 +1,17 @@
+@use "utils" as *;
+
+:host {
+  width: 100%;
+  max-width: pxToRem(500px);
+}
+
+.input {
+  display: flex;
+  width: 100%;
+  &__item {
+    width: 100%;
+    padding: pxToRem(16px);
+    border-radius: pxToRem(19px);
+    border: 1px solid $color-primary;
+  }
+}
