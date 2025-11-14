@@ -13,7 +13,7 @@
 
     .sidebar {
       width: 100%;
-      max-width: 300px;
+      max-width: pxToRem(300px);
       flex-shrink: 0;
       background: $color-white;
     }
@@ -21,7 +21,7 @@
     .content {
       flex: 1;
       overflow-y: auto;
-      padding: 0 pxToRem(32px) pxToRem(32px);
+      padding: 0 0 pxToRem(32px) pxToRem(32px);
     }
   }
 }

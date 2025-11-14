@@ -1,0 +1,39 @@
+@use "utils" as *;
+
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: pxToRem(24px);
+  width: 100%;
+
+  &__banner {
+    width: 100%;
+    height: pxToRem(220px);
+    border-radius: pxToRem(19px);
+    background-image: url("https://res.cloudinary.com/db1tp6eqg/image/upload/v1762406027/clou_zt4hme.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__search {
+    width: 100%;
+    max-width: pxToRem(500px);
+    width: 100%;
+    padding: pxToRem(16px);
+    border-radius: pxToRem(19px);
+    border: 1px solid $color-primary;
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+    gap: pxToRem(23px);
+  }
+}
