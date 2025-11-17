@@ -1,0 +1,7 @@
+<div class="select">
+  <select class="select__item">
+    @for(option of options(); track option){
+    <option [value]="option.value">{{ option.label }}</option>
+    }
+  </select>
+</div>

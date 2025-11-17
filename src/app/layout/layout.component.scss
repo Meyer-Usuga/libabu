@@ -3,13 +3,17 @@
 .layout {
   display: flex;
   flex-direction: column;
+  margin-left: pxToRem(24px);
+  margin-right: pxToRem(24px);
+  height: 100vh;
 
   &__body {
     display: flex;
     height: 100vh;
-    overflow: hidden;
     gap: pxToRem(32px);
-    @include container();
+    height: auto;
+    flex: 1;
+    overflow: hidden;
 
     .sidebar {
       width: 100%;

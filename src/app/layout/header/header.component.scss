@@ -4,8 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: pxToRem(24px);
+  margin-right: pxToRem(24px);
   max-height: pxToRem(80px);
-  @include container();
 
   &__icons {
     display: flex;

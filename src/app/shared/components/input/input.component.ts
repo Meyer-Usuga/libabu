@@ -9,6 +9,7 @@ import { Component, input, signal } from '@angular/core';
 export class InputComponent {
   readonly type = input<string>('text');
   readonly placeholder = input<string>('text');
+  readonly variant = input<'rounded' | 'square'>('rounded');
   readonly inputId = signal(
     `input-${Math.random().toString(36).substring(2, 15)}`
   );

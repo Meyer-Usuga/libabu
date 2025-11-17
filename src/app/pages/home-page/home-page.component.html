@@ -1,8 +1,9 @@
 <section class="home">
   <div class="home__banner"></div>
 
-  <!-- TODO: Esto debe ser un componente global en shared/components. -->
-  <input type="text" placeholder="Search..." class="home__search" />
+  <div class="home__search">
+    <app-input type="text" placeholder="Buscar libro" />
+  </div>
 
   <div class="home__categories">
     <app-button type="secondary"> Cuentos infantiles </app-button>
@@ -10,5 +11,18 @@
     <app-button type="secondary"> Literatura Clásica </app-button>
     <app-button type="secondary"> Historia y Biografías </app-button>
     <app-button type="secondary"> Arte y cultura </app-button>
+    <app-button type="secondary"> Ciencia ficción </app-button>
+  </div>
+
+  <div class="home__featured">
+    <div class="home__featured--title">
+      <h3>Destacados</h3>
+      <app-button type="tertiary">Ver más ⟶</app-button>
+    </div>
+    <div class="home__featured--books">
+      @for(book of featuredBooks; track book){
+      <app-book-card [image]="book"></app-book-card>
+      }
+    </div>
   </div>
 </section>

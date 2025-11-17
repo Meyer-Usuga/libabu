@@ -1,1 +1,62 @@
-<p>explore-page works!</p>
+<section class="explore-page">
+  <div class="explore-page__categories">
+    <app-box
+      backgroundImage="https://res.cloudinary.com/db1tp6eqg/image/upload/v1763358395/istockphoto-1450308510-612x612_yqrtgs.jpg"
+    >
+      <p>Libros para niños</p>
+    </app-box>
+
+    <app-box
+      backgroundImage="https://res.cloudinary.com/db1tp6eqg/image/upload/v1763357692/istockphoto-485902412-612x612_imzvhp.jpg"
+    >
+      <p>Libros para jovenes</p>
+    </app-box>
+
+    <app-box
+      backgroundImage="https://res.cloudinary.com/db1tp6eqg/image/upload/v1763358602/EE4A4716-London_Library__lr9gf2.jpg"
+    >
+      <p>Libros avanzados</p>
+    </app-box>
+  </div>
+
+  <div class="explore-page__filters">
+    <div class="explore-page__search-bar">
+      <app-input placeholder="Buscar libros..." variant="square" />
+      <app-button type="primary">Busqueda avanzada</app-button>
+    </div>
+
+    <div class="explore-page__filter-list">
+      @for(options of documentTypeOptions; track options){
+      <app-select [options]="[options]" />
+      } @for(options of autorOptions; track options){
+      <app-select [options]="[options]" />
+      } @for(options of categoryOptions; track options){
+      <app-select [options]="[options]" />
+      } @for(options of materiaOptions; track options){
+      <app-select [options]="[options]" />
+      } @for(options of labelOptions; track options){
+      <app-select [options]="[options]" />
+      } @for(options of editorialOptions; track options){
+      <app-select [options]="[options]" />
+      } @for(options of yearOptions; track options){
+      <app-select [options]="[options]" />
+      } @for(options of languageOptions; track options){
+      <app-select [options]="[options]" />
+      }
+    </div>
+  </div>
+
+  <div class="explore-page__sort">
+    <app-button type="tertiary">
+      <img src="rows.svg" height="20" width="20" />
+      |
+      <img src="square.svg" height="20" width="20" />
+    </app-button>
+  </div>
+
+  <div class="explore-page__books">
+    @for(book of sortedBooks; track book){
+    <app-book-card [image]="book"></app-book-card>
+    }
+  </div>
+</section>

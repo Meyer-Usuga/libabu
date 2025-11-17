@@ -1,0 +1,31 @@
+@use "utils" as *;
+
+.select {
+  position: relative;
+  width: 100%;
+
+  &__item {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 100%;
+    padding: pxToRem(12px) pxToRem(40px) pxToRem(12px) pxToRem(16px);
+    font-size: pxToRem(16px);
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    border-radius: pxToRem(8px);
+    background-color: $color-white;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%238b0010' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.25 7.5L10 12.25L14.75 7.5H5.25Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right pxToRem(12px) center;
+    background-size: pxToRem(18px);
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(139, 0, 16, 0.15);
+    }
+  }
+}
