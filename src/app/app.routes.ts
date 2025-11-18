@@ -14,6 +14,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('@pages').then((m) => m.ExplorePageComponent),
       },
+      {
+        path: 'comunidad',
+        loadComponent: () =>
+          import('@pages').then((m) => m.CommunityPageComponent),
+      },
     ],
   },
 ];
