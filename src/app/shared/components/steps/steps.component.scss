@@ -1,0 +1,32 @@
+@use "utils" as *;
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(16px);
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .titles {
+      display: flex;
+      gap: pxToRem(100px);
+      padding: 0;
+      margin-top: 0;
+      align-items: center;
+    }
+
+    .active {
+      color: black;
+      font-weight: 500;
+      border-bottom: 2px solid $color-primary;
+    }
+
+    span {
+      cursor: pointer;
+    }
+  }
+}

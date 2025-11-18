@@ -16,20 +16,30 @@
   padding: pxToRem(32px);
   background-color: $color-secondary;
   overflow: hidden;
-  color: $color-white;
-  text-shadow: 0 9px 6px rgba(0, 0, 0, 0.6);
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: inherit;
-    z-index: 0;
+  &.with-background {
+    color: $color-white;
+    text-shadow: 0 9px 6px rgba(0, 0, 0, 0.6);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: inherit;
+      z-index: 0;
+    }
+
+    > * {
+      position: relative;
+      z-index: 1;
+    }
   }
 
-  > * {
-    position: relative;
-    z-index: 1;
+  &.single-box {
+    background-color: $color-secondary;
+    box-shadow: none;
+    text-shadow: none;
+    color: black;
   }
 }

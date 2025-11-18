@@ -19,6 +19,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('@pages').then((m) => m.CommunityPageComponent),
       },
+      {
+        path: 'tus-historias',
+        loadComponent: () =>
+          import('@pages').then((m) => m.StoriesPageComponent),
+      },
     ],
   },
 ];

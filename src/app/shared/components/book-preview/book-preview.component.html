@@ -1,0 +1,36 @@
+<div class="book-preview">
+  <div class="book-preview__summary">
+    <div class="book-preview__summary--image">
+      <app-book-card [image]="bookSummary().image" />
+    </div>
+
+    <div class="book-preview__summary--statistics">
+      <h3>{{ bookSummary().title }}</h3>
+      <p>{{ bookSummary().chapters }} capítulos</p>
+      <p>Actualizado {{ bookSummary().lastUpdate }}</p>
+      <div class="statistics">
+        <p>{{ bookSummary().statistics.views }}</p>
+        <p>{{ bookSummary().statistics.stars }}</p>
+        <p>{{ bookSummary().statistics.comments }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="book-preview__actions">
+    <app-button type="secondary">Continuar escribiendo</app-button>
+    <div class="items">
+      <app-button type="secondary">
+        <img src="price.svg" />
+      </app-button>
+      <app-button type="secondary">
+        <img src="charts.svg" />
+      </app-button>
+      <app-button type="secondary">
+        <img src="share.svg" />
+      </app-button>
+      <app-button type="secondary">
+        <img src="delete.svg" />
+      </app-button>
+    </div>
+  </div>
+</div>

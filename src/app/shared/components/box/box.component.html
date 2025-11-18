@@ -1,5 +1,7 @@
 <article
   class="box"
+  [class.single-box]="!backgroundImage()"
+  [class.with-background]="backgroundImage()"
   [ngStyle]="{ 'background-image': 'url(' + backgroundImage() + ')' }"
 >
   <ng-content></ng-content>

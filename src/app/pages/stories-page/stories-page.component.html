@@ -1,0 +1,30 @@
+<section class="stories-page">
+  <div class="stories-page__summary">
+    <app-box>
+      <h1>1300K</h1>
+      <p>Seguidores</p>
+    </app-box>
+
+    <app-box>
+      <h1>200</h1>
+      <p>Siguiendo</p>
+    </app-box>
+
+    <app-box>
+      <h1>26</h1>
+      <p>Historias creadas</p>
+    </app-box>
+  </div>
+
+  <div class="stories-page__books">
+    <app-steps [steps]="listSteps">
+      <app-button type="primary" custom-action>+ Crear Historia</app-button>
+
+      <div class="stores-page__books--items" content>
+        @for(book of books; track book.id){
+        <app-book-preview [bookSummary]="book" />
+        }
+      </div>
+    </app-steps>
+  </div>
+</section>

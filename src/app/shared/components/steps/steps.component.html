@@ -1,0 +1,13 @@
+<section class="steps">
+  <nav class="steps__header">
+    <div class="titles">
+      @for(step of steps(); track step){
+      <span (click)="onChangeStep(step.step)" [class.active]="step.active">{{
+        step.label
+      }}</span>
+      }
+    </div>
+    <ng-content select="[custom-action]"></ng-content>
+  </nav>
+  <ng-content select="[content]"></ng-content>
+</section>
