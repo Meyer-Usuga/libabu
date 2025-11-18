@@ -1,0 +1,44 @@
+@use "utils" as *;
+
+.community-page {
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(32px);
+
+  &__categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: pxToRem(32px);
+  }
+
+  &__search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    app-input {
+      width: 50%;
+    }
+  }
+
+  &__popular,
+  &__recent {
+    display: flex;
+    flex-direction: column;
+    gap: pxToRem(16px);
+
+    &--header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &--results {
+      display: grid;
+      gap: pxToRem(24px);
+      align-items: center;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(pxToRem(180px), 1fr));
+    }
+  }
+}

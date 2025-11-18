@@ -1,0 +1,53 @@
+<section class="community-page">
+  <div class="community-page__categories">
+    <app-box
+      backgroundImage="https://res.cloudinary.com/db1tp6eqg/image/upload/v1763432949/clubart_1_mpcphx.avif"
+    >
+      <p>Clubs para niños</p>
+    </app-box>
+
+    <app-box
+      backgroundImage="https://res.cloudinary.com/db1tp6eqg/image/upload/v1763432949/clubart_3_udoocv.avif"
+    >
+      <p>Clubs para jovenes</p>
+    </app-box>
+
+    <app-box
+      backgroundImage="https://res.cloudinary.com/db1tp6eqg/image/upload/v1763432949/clubart_2_pnv7cb.avif"
+    >
+      <p>Clubs avanzados</p>
+    </app-box>
+  </div>
+
+  <div class="community-page__search">
+    <h3>Conéctate, comparte y disfruta</h3>
+
+    <app-input placeholder="Buscar libro" variant="square" />
+  </div>
+
+  <div class="community-page__popular">
+    <div class="community-page__popular--header">
+      <h3>Clubes más populares</h3>
+      <app-button type="tertiary">Ver más ⟶</app-button>
+    </div>
+
+    <div class="community-page__popular--results">
+      @for(image of popularClubs; track image){
+      <app-book-card [image]="image" />
+      }
+    </div>
+  </div>
+
+  <div class="community-page__recent">
+    <div class="community-page__recent--header">
+      <h3>Clubes más recientes</h3>
+      <app-button type="tertiary">Ver más ⟶</app-button>
+    </div>
+
+    <div class="community-page__recent--results">
+      @for(image of recentClubs; track image){
+      <app-book-card [image]="image" />
+      }
+    </div>
+  </div>
+</section>
