@@ -24,6 +24,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('@pages').then((m) => m.StoriesPageComponent),
       },
+      {
+        path: 'favoritos',
+        loadComponent: () =>
+          import('@pages').then((m) => m.FavoritesPageComponent),
+      },
     ],
   },
 ];

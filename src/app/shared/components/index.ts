@@ -4,4 +4,5 @@ export * from './input';
 export * from './select';
 export * from './box';
 export * from './book-preview';
+export * from './author-preview';
 export * from './steps';

@@ -1,0 +1,28 @@
+@use "utils" as *;
+
+.favorites-page {
+  display: flex;
+  flex-direction: column;
+  gap: pxToRem(32px);
+
+  &__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: pxToRem(32px);
+
+    p {
+      font-weight: 500;
+      font-size: pxToRem(18px);
+    }
+  }
+
+  &__search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    app-input {
+      width: 50%;
+    }
+  }
+}

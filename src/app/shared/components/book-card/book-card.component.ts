@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class BookCardComponent {
   readonly image = input.required<string>();
+  readonly variant = input<'square' | 'rounded'>('square');
 }

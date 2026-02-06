@@ -9,9 +9,15 @@
       <p>{{ bookSummary().chapters }} capítulos</p>
       <p>Actualizado {{ bookSummary().lastUpdate }}</p>
       <div class="statistics">
-        <p>{{ bookSummary().statistics.views }}</p>
-        <p>{{ bookSummary().statistics.stars }}</p>
-        <p>{{ bookSummary().statistics.comments }}</p>
+        <p>
+          <b>{{ bookSummary().statistics.views }}</b> vistas
+        </p>
+        <p>
+          <b>{{ bookSummary().statistics.stars }}</b> estrellas
+        </p>
+        <p>
+          <b>{{ bookSummary().statistics.comments }}</b> comentarios
+        </p>
       </div>
     </div>
   </div>

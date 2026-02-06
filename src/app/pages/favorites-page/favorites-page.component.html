@@ -1,0 +1,27 @@
+<section class="favorites-page">
+  <div class="favorites-page__options">
+    <app-box>
+      <p>Narradores</p>
+    </app-box>
+    <app-box>
+      <p>Libros guardados</p>
+    </app-box>
+    <app-box>
+      <p>Compras</p>
+    </app-box>
+  </div>
+
+  <div class="favorites-page__search">
+    <h3>"Tu espacio de elecciones"</h3>
+
+    <app-input placeholder="Buscar libro" variant="square" />
+  </div>
+
+  <div class="favorites-page__content">
+    <div class="stores-page__books--items" content>
+      @for (author of favoriteAuthors; track author.id) {
+        <app-author-preview [authorSummary]="author" />
+      }
+    </div>
+  </div>
+</section>

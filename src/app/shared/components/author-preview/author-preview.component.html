@@ -1,0 +1,23 @@
+<div class="author-preview">
+  <div class="author-preview__summary">
+    <div class="author-preview__summary--image">
+      <app-book-card [image]="authorSummary().avatar" variant="rounded" />
+    </div>
+
+    <div class="author-preview__summary--statistics">
+      <h3>{{ authorSummary().name }}</h3>
+      <p>{{ authorSummary().username }}</p>
+      <div class="statistics">
+        <p>
+          <b>{{ authorSummary().historiesCount }}</b> historias
+        </p>
+        <p>
+          <b>{{ authorSummary().followersHistoriesCount }}</b> seguidas
+        </p>
+        <p>
+          <b>{{ authorSummary().followersCount }}</b> seguidores
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

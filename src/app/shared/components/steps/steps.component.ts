@@ -1,10 +1,8 @@
 import { Component, input, output } from '@angular/core';
 import { Steps } from '@core/interfaces';
-import { ButtonComponent } from '../button';
-
 @Component({
   selector: 'app-steps',
-  imports: [ButtonComponent],
+  imports: [],
   standalone: true,
   templateUrl: './steps.component.html',
   styleUrl: './steps.component.scss',
