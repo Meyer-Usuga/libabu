@@ -7,16 +7,40 @@
 
   &__header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: pxToRem(16px);
+    align-items: flex-start;
+
+    @include media-gtsm {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
 
     .titles {
       display: flex;
-      gap: pxToRem(100px);
+      gap: pxToRem(24px);
       padding: 0;
       margin-top: 0;
       align-items: center;
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @include media-gtsm {
+        gap: pxToRem(48px);
+        width: auto;
+        overflow-x: visible;
+      }
+
+      @include media-gtmd {
+        gap: pxToRem(100px);
+      }
     }
 
     .active {
@@ -27,6 +51,13 @@
 
     span {
       cursor: pointer;
+      white-space: nowrap;
+      font-size: pxToRem(16px);
+      padding-bottom: pxToRem(4px);
+
+      @include media-gtmd {
+        font-size: pxToRem(18px);
+      }
     }
   }
 }

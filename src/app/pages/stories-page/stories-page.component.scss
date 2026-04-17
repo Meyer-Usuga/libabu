@@ -3,21 +3,56 @@
 .stories-page {
   display: flex;
   flex-direction: column;
-  gap: pxToRem(32px);
+  gap: pxToRem(24px);
+
+  @include media-gtmd {
+    gap: pxToRem(32px);
+  }
 
   &__summary {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: pxToRem(32px);
+    grid-template-columns: 1fr;
+    gap: pxToRem(16px);
+
+    @include media-gtsm {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: pxToRem(24px);
+    }
+
+    @include media-gtmd {
+      gap: pxToRem(32px);
+    }
+  }
+
+  &__books {
+    &--items {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: pxToRem(16px);
+
+      @include media-gtmd {
+        gap: pxToRem(24px);
+      }
+    }
   }
 
   h1 {
     margin: 0;
     padding: 0;
+    font-size: pxToRem(32px);
+
+    @include media-gtmd {
+      font-size: pxToRem(40px);
+    }
   }
 
   p {
     margin: 0;
     padding: 0;
+    font-size: pxToRem(16px);
+
+    @include media-gtmd {
+      font-size: pxToRem(18px);
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, output, Output } from '@angular/core';
 import { ButtonComponent } from 'app/shared/components';
 
 @Component({
@@ -8,4 +8,6 @@ import { ButtonComponent } from 'app/shared/components';
   standalone: true,
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  readonly toggleSidebar = output<void>();
+}

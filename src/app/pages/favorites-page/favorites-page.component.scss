@@ -3,26 +3,53 @@
 .favorites-page {
   display: flex;
   flex-direction: column;
-  gap: pxToRem(32px);
+  gap: pxToRem(24px);
+
+  @include media-gtmd {
+    gap: pxToRem(32px);
+  }
 
   &__options {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: pxToRem(32px);
+    grid-template-columns: 1fr;
+    gap: pxToRem(16px);
+
+    @include media-gtsm {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-gtmd {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: pxToRem(32px);
+    }
 
     p {
       font-weight: 500;
-      font-size: pxToRem(18px);
+      font-size: pxToRem(16px);
+
+      @include media-gtsm {
+        font-size: pxToRem(18px);
+      }
     }
   }
 
   &__search {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: pxToRem(16px);
+
+    @include media-gtsm {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     app-input {
-      width: 50%;
+      width: 100%;
+
+      @include media-gtsm {
+        width: 50%;
+      }
     }
   }
 }

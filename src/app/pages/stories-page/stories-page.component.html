@@ -20,7 +20,7 @@
     <app-steps [steps]="listSteps">
       <app-button type="primary" custom-action>+ Crear Historia</app-button>
 
-      <div class="stores-page__books--items" content>
+      <div class="stories-page__books--items" content>
         @for(book of books; track book.id){
         <app-book-preview [bookSummary]="book" />
         }

@@ -1,38 +1,45 @@
 @use "utils" as *;
 
 .sidebar {
-  position: relasttive;
+  position: relative;
   top: 0;
-  height: 85vh;
-  z-index: 1;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: pxToRem(12px);
-  left: pxToRem(-350px);
-  width: pxToRem(300px);
-  transition: left 0.3s ease;
+  width: 100%;
   justify-content: space-between;
 
   &__list {
     list-style: none;
-    padding: 0;
+    padding: 1rem;
     font-family: inherit;
     display: flex;
     flex-direction: column;
     justify-content: start;
     gap: pxToRem(4px);
+    margin-top: 0;
   }
 
   &__item {
     display: flex;
     align-items: center;
     gap: pxToRem(12px);
-    padding: pxToRem(12px);
-    font-size: pxToRem(18px);
+    padding: pxToRem(12px) pxToRem(16px);
+    font-size: pxToRem(16px);
     border-radius: 8px;
     color: black;
     justify-content: start;
     cursor: pointer;
+    transition: all 0.2s ease;
+
+    @include media-gtsm {
+      font-size: pxToRem(18px);
+    }
+
+    &:hover {
+      background: rgba($color-primary, 0.1);
+    }
 
     &.active {
       background: $color-primary;
@@ -47,10 +54,16 @@
   &__settings {
     display: flex;
     flex-direction: column;
-    padding: pxToRem(12px);
-    gap: pxToRem(24px);
+    padding: 1rem;
+    gap: pxToRem(16px);
     font-family: inherit;
-    font-size: pxToRem(18px);
+    font-size: pxToRem(16px);
+    margin-bottom: 1rem;
+
+    @include media-gtsm {
+      gap: pxToRem(24px);
+      font-size: pxToRem(18px);
+    }
   }
 
   &__option {
@@ -58,9 +71,10 @@
     gap: pxToRem(12px);
     font-family: inherit;
     cursor: pointer;
-  }
+    transition: opacity 0.2s ease;
 
-  &--open {
-    left: 0;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }

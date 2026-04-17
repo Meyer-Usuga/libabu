@@ -3,21 +3,44 @@
 .community-page {
   display: flex;
   flex-direction: column;
-  gap: pxToRem(32px);
+  gap: pxToRem(24px);
+
+  @include media-gtmd {
+    gap: pxToRem(32px);
+  }
 
   &__categories {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: pxToRem(32px);
+    grid-template-columns: 1fr;
+    gap: pxToRem(16px);
+
+    @include media-gtsm {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media-gtmd {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: pxToRem(32px);
+    }
   }
 
   &__search {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: pxToRem(16px);
+
+    @include media-gtsm {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     app-input {
-      width: 50%;
+      width: 100%;
+
+      @include media-gtsm {
+        width: 50%;
+      }
     }
   }
 
@@ -25,20 +48,34 @@
   &__recent {
     display: flex;
     flex-direction: column;
-    gap: pxToRem(16px);
+    gap: pxToRem(20px);
 
     &--header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
+
+      h2 {
+        font-size: pxToRem(20px);
+
+        @include media-gtsm {
+          font-size: pxToRem(24px);
+        }
+      }
     }
 
     &--results {
       display: grid;
-      gap: pxToRem(24px);
+      gap: pxToRem(12px);
       align-items: center;
       width: 100%;
-      grid-template-columns: repeat(auto-fit, minmax(pxToRem(180px), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(pxToRem(160px), 1fr));
+
+      @include media-gtsm {
+        gap: pxToRem(24px);
+        grid-template-columns: repeat(auto-fit, minmax(pxToRem(180px), 1fr));
+      }
     }
   }
 }

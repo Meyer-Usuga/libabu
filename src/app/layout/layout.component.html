@@ -1,10 +1,16 @@
 <div class="layout">
   <div class="layout__header">
-    <app-header></app-header>
+    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
   </div>
 
   <div class="layout__body">
-    <aside class="sidebar">
+    <div
+      class="backdrop"
+      [class.backdrop--visible]="isSidebarOpen"
+      (click)="toggleSidebar()"
+    ></div>
+
+    <aside class="sidebar" [class.sidebar--open]="isSidebarOpen">
       <app-sidebar />
     </aside>
 

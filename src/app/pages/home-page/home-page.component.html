@@ -20,7 +20,7 @@
       <app-button type="tertiary">Ver más ⟶</app-button>
     </div>
     <div class="home__featured--books">
-      @for(book of featuredBooks; track book){
+      @for(book of featuredBooks; track $index){
       <app-book-card [image]="book"></app-book-card>
       }
     </div>

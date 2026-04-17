@@ -3,29 +3,82 @@
 .layout {
   display: flex;
   flex-direction: column;
-  margin-left: pxToRem(24px);
-  margin-right: pxToRem(24px);
+  margin-left: pxToRem(16px);
+  margin-right: pxToRem(16px);
   height: 100vh;
+  transition: all 0.3s ease;
+
+  @include media-gtsm {
+    margin-left: pxToRem(24px);
+    margin-right: pxToRem(24px);
+  }
 
   &__body {
     display: flex;
-    height: 100vh;
-    gap: pxToRem(32px);
-    height: auto;
+    gap: 0;
     flex: 1;
     overflow: hidden;
+    position: relative;
+
+    @include media-gtsm {
+      gap: pxToRem(32px);
+    }
+
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 99;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+
+      @include media-gtmd {
+        display: none;
+      }
+
+      &--visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
 
     .sidebar {
-      width: 100%;
-      max-width: pxToRem(300px);
-      flex-shrink: 0;
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 100;
+      width: pxToRem(280px);
       background: $color-white;
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 10px 0 15px -3px rgba(0, 0, 0, 0.1);
+
+      @include media-gtmd {
+        position: relative;
+        transform: none;
+        width: pxToRem(300px);
+        max-width: pxToRem(300px);
+        flex-shrink: 0;
+        z-index: 1;
+        box-shadow: none;
+      }
+
+      &--open {
+        transform: translateX(0);
+      }
     }
 
     .content {
       flex: 1;
       overflow-y: auto;
-      padding: 0 0 pxToRem(32px) pxToRem(32px);
+      padding: pxToRem(16px) 0;
+      width: 100%;
+
+      @include media-gtsm {
+        padding: 0 0 pxToRem(32px) pxToRem(32px);
+      }
     }
   }
 }

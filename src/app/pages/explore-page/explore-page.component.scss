@@ -3,12 +3,26 @@
 .explore-page {
   display: flex;
   flex-direction: column;
-  gap: pxToRem(32px);
+  gap: pxToRem(24px);
+
+  @include media-gtmd {
+    gap: pxToRem(32px);
+  }
 
   &__categories {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: pxToRem(32px);
+    grid-template-columns: 1fr;
+    gap: pxToRem(16px);
+
+    @include media-gtsm {
+      grid-template-columns: 1fr 1fr;
+      gap: pxToRem(24px);
+    }
+
+    @include media-gtmd {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: pxToRem(32px);
+    }
   }
 
   &__filters {
@@ -21,22 +35,37 @@
   &__search-bar {
     display: grid;
     align-items: stretch;
-    grid-template-columns: 1fr auto;
-    gap: pxToRem(16px);
+    grid-template-columns: 1fr;
+    gap: pxToRem(12px);
+
+    @include media-gtsm {
+      grid-template-columns: 1fr auto;
+      gap: pxToRem(16px);
+    }
   }
 
   &__filter-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(pxToRem(220px), 1fr));
-    gap: pxToRem(16px);
+    grid-template-columns: repeat(auto-fill, minmax(pxToRem(160px), 1fr));
+    gap: pxToRem(12px);
+
+    @include media-gtsm {
+      grid-template-columns: repeat(auto-fill, minmax(pxToRem(220px), 1fr));
+      gap: pxToRem(16px);
+    }
   }
 
   &__books {
     display: grid;
-    gap: pxToRem(24px);
+    gap: pxToRem(12px);
     align-items: center;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(pxToRem(180px), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(pxToRem(160px), 1fr));
+
+    @include media-gtsm {
+      gap: pxToRem(24px);
+      grid-template-columns: repeat(auto-fill, minmax(pxToRem(180px), 1fr));
+    }
   }
 
   &__sort {
@@ -47,6 +76,14 @@
   h1 {
     padding: 0;
     margin: 0;
-    font-size: pxToRem(48px);
+    font-size: pxToRem(32px);
+
+    @include media-gtsm {
+      font-size: pxToRem(40px);
+    }
+
+    @include media-gtmd {
+      font-size: pxToRem(48px);
+    }
   }
 }
